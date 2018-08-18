@@ -1,32 +1,117 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 
 export default class Header extends React.Component{
+
+    constructor() {
+        super();
+        this.state = {
+            message: 'static-sticky transparent-header dark'
+        };
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    componentDidUpdate() {
+        ReactDOM.findDOMNode(this).scrollTop = 0
+    }   
+    
+    handleScroll = () => {
+        
+        if (window.scrollY === 0) {
+            this.setState({
+            message: 'static-sticky transparent-header dark'
+            });
+        } else {
+            this.setState({
+            message: 'static-sticky transparent-header dark sticky-header'
+            });
+        }
+    }
+
     render(){
         return(
-        <section id="slider" className="slider-element force-full-screen full-screen dark clearfix">
-            <div className="force-full-screen full-screen">
-                <div className="fslider" data-speed="3000" data-pause="7500" data-animation="fade" data-arrows="false" data-pagi="false" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: #333; z-index: 1;">
-                    <div className="flexslider" style="height: 100% !important;">
-                        <div className="slider-wrap" style="height: inherit;">
-                            <div className="slide" style="background: url('https://wallpapercave.com/wp/ebBird9.jpg') center center; background-size: cover; height: 100% !important;"></div>
-                            <div className="slide" style="background: url('demos/real-estate/images/hero/4.jpg') center center; background-size: cover; height: 100% !important;"></div>
-                            <div className="slide" style="background: url('demos/real-estate/images/hero/5.jpg') center center; background-size: cover; height: 100% !important;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="vertical-middle" style="z-index: 3;">
-                    <div className="container center clearfix">
-                        <div className="emphasis-title nomargin">
-                            <h1>Your Dream Home.</h1>
-                            <span className="t300 uppercase" style="font-size: 18px; letter-spacing: 10px; color: rgba(255,255,255,0.9);">A Few Clicks Away.</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="video-wrap" style="position: absolute; top: 0; left: 0; height: 100%; z-index:1;">
-                    <div className="video-overlay real-estate-video-overlay" style="z-index: 1;"></div>
-                </div>
-            </div>
-        </section>
+		<header id="header" className={this.state.message} onScroll={this.handleScroll}>
+			<div id="header-wrap">
+				<div className="container clearfix">
+					<div id="primary-menu-trigger">
+						<i className="icon-reorder"></i>
+					</div>
+
+					<div id="logo">
+						<a href="index.html" data-dark-logo="demos/real-estate/images/logo.png" className="standard-logo">
+							<img src="demos/real-estate/images/logo.png" alt="Canvas Logo"/>
+						</a>
+						<a href="index.html" data-dark-logo="demos/real-estate/images/logo@2x.png" className="retina-logo">
+							<img src="demos/real-estate/images/logo@2x.png" alt="Canvas Logo"/>
+						</a>
+					</div>
+
+					<nav id="primary-menu" className="with-arrows">
+						<ul>
+							<li className="current">
+								<a >
+									<div>Home</div>
+								</a>
+							</li>
+							<li>
+								<a href="demos/real-estate/about-us.html">
+									<div>About Us</div>
+								</a>
+							</li>
+							<li>
+								<a href="demos/real-estate/#">
+									<div>Properties</div>
+								</a>
+								<ul>
+									<li>
+										<a href="demos/real-estate/single-property.html">
+											<div>Condo Apartments</div>
+										</a>
+									</li>
+									<li>
+										<a href="demos/real-estate/single-property.html">
+											<div>Luxury Villas</div>
+										</a>
+									</li>
+									<li>
+										<a href="demos/real-estate/single-property.html">
+											<div>Premium Estates</div>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="demos/real-estate/builders.html">
+									<div>Builders</div>
+								</a>
+							</li>
+							<li>
+								<a href="demos/real-estate/services.html">
+									<div>Services</div>
+								</a>
+							</li>
+							<li>
+								<a href="demos/real-estate/listing.html">
+									<div>Listing</div>
+								</a>
+							</li>
+							<li>
+								<a href="demos/real-estate/contact.html">
+									<div>Contact</div>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
         )
     }
 }
