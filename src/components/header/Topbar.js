@@ -10,7 +10,7 @@ export default class Topbar extends React.Component{
 						<ul>
 							<li>
 								<a >All Cities</a>
-								<ul>
+								<ul style={{color: '#333'}}>
 									<li>
 										<a >New York</a>
 									</li>
@@ -45,10 +45,10 @@ export default class Topbar extends React.Component{
 							</li>
 							<li className="top-bar-highlight">
 								<a >Sell/Rent your Property</a>
-								<div className="top-link-section" style={{fontSize: 14}}>
+								<div className="top-link-section" style={{fontSize: 14, color: '#333'}}>
 									Genuine Clients, 100% Trust Assurance and Lowest Fees on the Market.
 									<a  className="more-link font-secondary"
-									 style={{borderBottomStyle: 'dotted'}}>Learn More &rarr;</a>
+									 style={{borderBottomStyle: 'dotted', color: '#333'}}>Learn More &rarr;</a>
 								</div>
 							</li>
 							<li>

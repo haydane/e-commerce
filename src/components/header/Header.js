@@ -62,7 +62,7 @@ export default class Header extends React.Component{
 								</a>
 							</li>
 							<li>
-								<a href="demos/real-estate/about-us.html">
+								<a>
                                     <Link to='/about' style={{ color: '#fff' }}>About us</Link>
 								</a>
 							</li>

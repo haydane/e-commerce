@@ -35,7 +35,7 @@ export default class Room extends Component {
                 <div className="real-estate-item-image">
                     <div className="badge badge-danger bgcolor-2">{this.state.forSth}</div>
                     <a >
-                        <img src={this.state.image} alt="Image"/>
+                       <img src={this.state.image} alt="Image"/>
                     </a>
                     <div className="real-estate-item-price">
                         {this.state.price}
