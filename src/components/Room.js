@@ -11,7 +11,7 @@ export default class Room extends Component {
                               </a>
                               <div className="real-estate-item-price">
                                    $1.2m
-											<span>Leasehold</span>
+							<span>Leasehold</span>
                               </div>
                               <div className="real-estate-item-info clearfix">
                                    <a >
