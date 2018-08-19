@@ -3,7 +3,7 @@ import React from 'react'
 export default class Panel extends React.Component{
     render(){
         return(
-        <div id="side-panel">
+        <div id="side-panel" style={{color: "#fff"}}>
             <div id="side-panel-trigger-close" className="side-panel-trigger">
                 <a >
                     <i className="icon-line-cross"></i>

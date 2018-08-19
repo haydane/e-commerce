@@ -6,7 +6,6 @@ export default class Topbar extends React.Component{
             <div id="top-bar" className="transparent-topbar">
 			<div className="container clearfix" style={{color: '#fff'}}>
 				<div className="col_half nobottommargin clearfix">
-
 					<div className="top-links">
 						<ul>
 							<li>
