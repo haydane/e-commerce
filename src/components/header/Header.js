@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom';
 
 export default class Header extends React.Component{
 
@@ -57,12 +58,12 @@ export default class Header extends React.Component{
 						<ul>
 							<li className="current">
 								<a >
-									<div>Home</div>
+									<Link to='/' style={{ color: '#fff' }}>Home</Link>
 								</a>
 							</li>
 							<li>
 								<a href="demos/real-estate/about-us.html">
-									<div>About Us</div>
+                                    <Link to='/about' style={{ color: '#fff' }}>About us</Link>
 								</a>
 							</li>
 							<li>

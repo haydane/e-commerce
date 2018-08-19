@@ -16,6 +16,7 @@ import FeatureBox from '../components/FeatureBox';
 import Room from '../components/Room';
 
 export default class Home extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state =
@@ -24,8 +25,55 @@ export default class Home extends React.Component {
                 column6: "col-lg-2 col-md-6 col-6 bottommargin-sm",
                 sliderStyle1: "col-lg-4 col-md-6 col-12",
                 sliderStyle2: "col-lg-4 offset-lg-1 col-md-6 col-12",
+                room: []
             }
     }
+
+    componentDidMount(){
+        
+        let list =[
+            {
+                forSth: 'For Sale',
+                image: 'demos/real-estate/images/items/1.jpg', 
+                price: '$12.50', 
+                title: '3 Bed Room', 
+                subtitle: 'This is new room!', 
+                bedCount: 10, 
+                bathCount: 20, 
+                area: '1000 spm', 
+                pool: true, 
+                internet: false,
+                clean: false
+            },
+            {forSth: 'For Rent', image: 'demos/real-estate/images/items/2.jpg', price: '$13.50', title: '4 Bed Room', subtitle: 'This is new room!', bedCount: 11, bathCount: 21, area: '1001 spm', pool: false, internet: true, clean: true},
+            {forSth: 'For Sale', image: 'demos/real-estate/images/items/3.jpg', price: '$14.50', title: '5 Bed Room', subtitle: 'This is new room!', bedCount: 12, bathCount: 22, area: '1002 spm', pool: true, internet: false, clean: false},
+            {forSth: 'For Rent', image: 'demos/real-estate/images/items/4.jpg', price: '$15.50', title: '6 Bed Room', subtitle: 'This is new room!', bedCount: 13, bathCount: 23, area: '1003 spm', pool: false, internet: true, clean: true},
+            {forSth: 'For Sale', image: 'demos/real-estate/images/items/5.jpg', price: '$16.50', title: '7 Bed Room', subtitle: 'This is new room!', bedCount: 14, bathCount: 24, area: '1004 spm', pool: true, internet: false, clean: false},
+            {forSth: 'For Rent', image: 'demos/real-estate/images/items/6.jpg', price: '$17.50', title: '8 Bed Room', subtitle: 'This is new room!', bedCount: 15, bathCount: 25, area: '1005 spm', pool: false, internet: true, clean: false},
+            {forSth: 'For Sale', image: 'demos/real-estate/images/items/7.jpg', price: '$18.50', title: '9 Bed Room', subtitle: 'This is new room!', bedCount: 16, bathCount: 26, area: '1006 spm', pool: true, internet: false, clean: true}
+        ];
+
+        this.setState({
+            room: list.map(lst => {
+               return(
+                   <Room 
+                    forSth={lst.forSth}
+                    image={lst.image} 
+                    price={lst.price} 
+                    title={lst.title} 
+                    subtitle={lst.subtitle} 
+                    bedCount={lst.bedCount} 
+                    bathCount={lst.bathCount} 
+                    area={lst.area} 
+                    poolCheck={lst.pool} 
+                    internetCheck={lst.internet} 
+                    cleanCheck={lst.clean}
+                    key={lst.title}/>
+               ) 
+            })
+        })
+    }
+
     render() {
         return (
             <div className="stretched side-push-panel">
@@ -94,9 +142,10 @@ export default class Home extends React.Component {
 							            <h3>Featured Properties</h3>
 						            </div>
 						            <a className="button button-small button-rounded button-border button-border-thin t500 nomargin" style={{position: "absolute", top: 7, right: 0}}>Check All</a>
-						            <div className="real-estate owl-carousel image-carousel carousel-widget bottommargin-lg" data-margin="10" data-nav="true" data-loop="true"
-						                data-pagi="false" data-items-xs="1" data-items-sm="1" data-items-md="2" data-items-lg="3" data-items-xl="3">
-                                        <Room/>
+						            <div className="real-estate owl-carousel image-carousel carousel-widget bottommargin-lg" 
+                                    data-margin="10" data-nav="true" data-loop="false" data-pagi="false" data-items-xs="1" data-items-sm="1" data-items-md="2" data-items-lg="3" data-items-xl="3"
+                                    >
+                                    {this.state.room}
                                     </div>
                                 </div>
                             </div>
