@@ -32,7 +32,6 @@ export default class Topbar extends React.Component{
 					</div>
 				</div>
 				<div className="col_half fright col_last clearfix nobottommargin">
-
 					<div className="top-links">
 						<ul>
 							<li className="d-md-none d-lg-block">

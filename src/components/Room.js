@@ -33,7 +33,7 @@ export default class Room extends Component {
             <div className="oc-item">
             <div className="real-estate-item">
                 <div className="real-estate-item-image">
-                    <div className="badge badge-danger bgcolor-2">{this.state.forSth}</div>
+                    <div className={this.state.forSth === "For Sale" ? "badge badge-danger": "badge badge-success"}>{this.state.forSth}</div>
                     <a >
                        <img src={this.state.image} alt="Image"/>
                     </a>

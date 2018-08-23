@@ -1,27 +1,17 @@
 import React from 'react';
-import './Header.css';
 
-export default class Slider extends React.Component{
+export default class Cover extends React.Component{
     constructor(props)
     {
         super(props)
         {
             this.state =
             {
-                slide: [] 
+                image: this.props.image
             }
         }
     }
-    componentWillMount()
-    {
-        this.setState({
-            slide: this.props.image.map(img => {
-                return(
-                    <img src={img}  className="slide Back"/>
-                );
-            })
-        })
-    }
+
     render(){
         return(
         <section id="slider" className="slider-element force-full-screen full-screen dark clearfix" style={{ height: 725 }}>
@@ -29,7 +19,7 @@ export default class Slider extends React.Component{
                 <div className="fslider" data-speed="3000" data-pause="7500" data-animation="fade" data-arrows="false" data-pagi="false" style={{position: 'absolute', width: '100%', height: 725, top: 0, left: 0, backgroundColor: '#333', zIndex: 1}}>
                     <div className="flexslider">
                         <div className="slider-wrap">
-                           {this.state.slide}
+                        <img src={this.state.image}/>
                         </div>
                     </div>
                 </div>

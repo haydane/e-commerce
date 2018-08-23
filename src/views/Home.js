@@ -16,7 +16,7 @@ import FeatureBox from '../components/FeatureBox';
 import Room from '../components/Room';
 
 export default class Home extends React.Component {
-    
+
     constructor(props) {
         super(props);
         this.state =
@@ -33,16 +33,16 @@ export default class Home extends React.Component {
         
         let list =[
             {
-                forSth: 'For Sale',
+                forSth: 'For Rent',
                 image: 'demos/real-estate/images/items/1.jpg', 
                 price: '$12.50', 
-                title: '3 Bed Room', 
+                title: '1 Bed Room', 
                 subtitle: 'This is new room!', 
                 bedCount: 10, 
                 bathCount: 20, 
                 area: '1000 spm', 
                 pool: true, 
-                internet: false,
+                internet: true,
                 clean: false
             },
             {forSth: 'For Rent', image: 'demos/real-estate/images/items/2.jpg', price: '$13.50', title: '4 Bed Room', subtitle: 'This is new room!', bedCount: 11, bathCount: 21, area: '1001 spm', pool: false, internet: true, clean: true},
@@ -81,7 +81,10 @@ export default class Home extends React.Component {
                 <div id="wrapper" className="clearfix" style={{ animationDuration: "1500ms", opacity: "1" }}>
                     <Topbar />
                     <Header />
-                    <Slider />
+                    <Slider image={["demos/real-estate/images/about-us/1.jpg",
+                                    "demos/real-estate/images/about-us/2.jpg",
+                                    "demos/real-estate/images/about-us/3.jpg",
+                                    ]}/>
                     <div className="tabs advanced-real-estate-tabs clearfix">
                         <div className="container clearfix">
                             <ul className="tab-nav clearfix">
